@@ -1,5 +1,50 @@
 ---
 layout: default
 title: Homepage
+news:
+- title: Big Sale
+  description: Exiting things are happening
+  date: 13th June 
+  category: Promo
+  url: https://www.sale.com
+- title: Bargin Coming!
+  description: Not long now
+  date: 13th June 
+  category: Sale
+  url: https://www.bargin.com
+- title: Massive Sale
+  description: so much stuff
+  date: 13th June 
+  category: BTS
+  url: https://www.massive.com
+- title: Massive Sale
+  description: so much stuff
+  date: 13th June 
+  category: BTS
+  url: https://www.massive.com
+
 ---
-<h1>Welcome to your homepage!</h1>
+
+<section class="grid-spaceBetween padded bg-featured latest-news">
+
+    {% for item in page.news %}
+    
+  <!--  First Card   ---- --->
+    <div class="col-3 ">
+        <div class="card">
+          <div class="bg-image">
+            <span> {{item.category}} </span>
+        </div>
+      <div class="post-info">
+        <p class="date"> {{item.date}} </p>
+        <h3>{{item.title}}</h3>
+        <p> {{item.description}} </p>
+        <a href="{{item.url}}"> Find out more &nbsp; &#10157;</a>  
+      </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  
+    
+  </section>
